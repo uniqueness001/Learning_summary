@@ -1,0 +1,9 @@
+一、MySQL数据类型：
+1、主要（常用）分类：整型、分本、日期/时间、定点数、浮点数、二进制等
+整型：int、tinyint、smallint、bigint
+分本：char、varchar（可变字符）、text
+日期/时间：date、time、datetime
+定点数：decimal（p，s）
+浮点数：float（p，s） 存储空间： 4字节；double（p，s） 存储空间：8字节
+二、数据表的基本操作：创建、查看、修改、删除
+创建：create database table
