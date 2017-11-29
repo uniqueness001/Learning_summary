@@ -1,9 +1,22 @@
 一、MySQL数据类型：
-1、主要（常用）分类：整型、分本、日期/时间、定点数、浮点数、二进制等
+1、主要（常用）类型：整型、分本、日期/时间、定点数、浮点数、二进制等
 整型：int、tinyint、smallint、bigint
 分本：char、varchar（可变字符）、text
 日期/时间：date、time、datetime
 定点数：decimal（p，s）
 浮点数：float（p，s） 存储空间： 4字节；double（p，s） 存储空间：8字节
-二、数据表的基本操作：创建、查看、修改、删除
-创建：create database table
+二、数据库的基本操作：
+1、创建/删除数据库：CREATE/DROP database database_name;
+三、数据表的基本操作：
+1、创建（CREATE）、查看（DESCRIBE）、修改（ALTER）、删除(DROP)
+创建：CREATE table table_name（field type null/not null）;
+查看：DESC table_name;
+修改：ALTER TABLE old_name RENAME TO new_name;
+删除：DROP table_name;
+2、创建表的约束添加：
+主键约束：PRIMARY KEY； 
+外键约束:REFERENCES；
+检查约束：CHECK(条件)；
+默认约束：DEFAULT'默认值'；
+四：数据字段的基本操作：
+
