@@ -29,5 +29,5 @@
 Win：完整安装TeX Live或CTeX，编写TeX源文件，运行Makepdf.bat即可。
 Linux:完整安装TeX Live或CTeX，编写TeX源文件，运行Make。
 PS：当然，你可以不用安装完整的宏包集，足够就好。
-有什么问题请直接电邮我。
+有什么问题请直接电邮我！
 
