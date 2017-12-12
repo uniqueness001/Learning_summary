@@ -15,8 +15,27 @@
 删除：DROP table_name;
 2、创建表的约束添加：
 主键约束：PRIMARY KEY； 
-外键约束:REFERENCES；
+外键约束:FOREIGN KEY；
 检查约束：CHECK(条件)；
 默认约束：DEFAULT'默认值'；
-四：数据字段的基本操作：
+四、命名套路：
+主键命名：PK-XX-XX;外键命名：FK-XX-XX;
+五、数据字段的基本操作：
+修改字段名：ALTER TABLE TABLE_NAME CHANGE OLD_NAME NEW_NAME NEW_TYPE;
+修改字段数据类型：ALTER TABLE TABLE_NAME MODIFY COL_NAME NEW_TYPE;
+添加和删除字段：ADD NEW_COL_NAME NEW_TYPE  DROP COL_NAME;
+六、插入值用法：
+所有列插入值：INSERT [INTO] TABLE_NAME VALUES(XXX,XXX,XXX);
+特定列插入值：INSERT [INTO] TABLE_NAME VALUES(XXX,XXX);
+一次性插入多条数据：INSERT [INTO] TABLE_NAME[(COL1，COL2，...,COLn)] VALUES(XXX,XXX,XXX)(XXX,XXX,XXX)...(Xn1,Xn2,...Xnn)
+七、数据库常用模式：
+SELECT COL1，COL2，...,COLn                        挑选某组数列
+FROM TABLE1，TABLE2，...,TABLEn                    来自具体列表
+WHERE CONDITIONS                                   挑选条件
+GROUP BY LIST                                      查询结果分组
+HAVING CONDITIONS                                  筛选分组结果
+ORDER BY LIST[ASC\DESC]                            进行排序
+
+
+
 
