@@ -1,1 +1,57 @@
-#
+一、用一条SQL语句 查询出每门课都大于80分的学生姓名
+1、SELECT NAME FROM TABLE GROUP BY NAME HAVING MIN(FENSHU)>80
+2、SELECT NAME FROM TABLE WHERE NAME NOT IN(SELECT DISTINCT NAME FROM TABLE WHERE FENSHU<=80)
+二、删除除了自动编号不同，其他都相同的学生冗余信息
+DELETE TABLENAME WHERE 自动编号 NOT IN (SELECT MIN(自动编号) FROM TABLENAME GROUP BY..........)
+三、1、 创建一张学生表，包含以下信息，学号，姓名，年龄，性别，家庭住址，联系电话
+Create table stu(学号 int，
+姓名 varchar(8),
+年龄 int,
+性别 varchar(4),
+家庭地址 varchar(50），
+联系电话 int
+);
+2、修改学生表的结构，添加一列信息，学历
+Alter table stu add 学历 varchar(6);
+3、修改学生表的结构，删除一列信息，家庭住址
+Alter table stu drop column 家庭住址；
+四、向学生表添加如下信息：
+学号 姓名 年龄 性别 联系电话 学历
+111222  余小帅   15  男  123456 高中
+Insert into stu values(111222,'余小帅',15,‘男’,‘123456’,'高中')
+修改学生表的数据，将电话号码以11开头的学员的学历改为‘大专’
+Update stu set 学历='大专' where 联系电话 like'11%'
+按照性别分组查询所有的平均年龄
+Select avg(年龄) from stu group by 性别
+五、说明：几个简单的基本的sql语句
+选择：select * from table1 where 范围
+插入：insert into table1(field1,field2) values(value1,value2)
+删除：delete from table1 where 范围
+更新：update table1 set field1=value1 where 范围
+查找：select * from table1 where field1 like ’%value1%’ ---like的语法很精妙，查资料!
+排序：select * from table1 order by field1,field2 [desc]
+总数：select count as totalcount from table1
+求和：select sum(field1) as sumvalue from table1
+平均：select avg(field1) as avgvalue from table1
+最大：select max(field1) as maxvalue from table1
+最小：select min(field1) as minvalue from table1
+六、说明：几个高级查询运算词
+A： UNION 运算符 
+UNION 运算符通过组合其他两个结果表（例如 TABLE1 和 TABLE2）并消去表中任何重复行而派生出一个结果表。当 ALL 随 UNION 一起使用时（即 UNION ALL），不消除重复行。两种情况下，派生表的每一行不是来自 TABLE1 就是来自 TABLE2。 
+B： EXCEPT 运算符 
+EXCEPT运算符通过包括所有在 TABLE1 中但不在 TABLE2 中的行并消除所有重复行而派生出一个结果表。当 ALL 随 EXCEPT 一起使用时 (EXCEPT ALL)，不消除重复行。
+C： INTERSECT 运算符
+INTERSECT运算符通过只包括 TABLE1 和 TABLE2 中都有的行并消除所有重复行而派生出一个结果表。当 ALL随 INTERSECT 一起使用时 (INTERSECT ALL)，不消除重复行。 
+注：使用运算词的几个查询结果行必须是一致的。 
+12、说明：使用外连接 
+A、left （outer） join： 
+左外连接（左连接）：结果集几包括连接表的匹配行，也包括左连接表的所有行。 
+SQL: select a.a, a.b, a.c, b.c, b.d, b.f from a LEFT OUT JOIN b ON a.a = b.c
+B：right （outer） join: 
+右外连接(右连接)：结果集既包括连接表的匹配连接行，也包括右连接表的所有行。 
+C：full/cross （outer） join： 
+全外连接：不仅包括符号连接表的匹配行，还包括两个连接表中的所有记录。
+七、创建索引
+创建索引：create [unique] index idxname on tabname(col….) 
+删除索引：drop index idxname
+注：索引是不可更改的，想更改必须删除重新建。
