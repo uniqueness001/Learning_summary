@@ -1,0 +1,37 @@
+、MySQL数据类型：
+1、主要（常用）类型：整型、分本、日期/时间、定点数、浮点数、二进制等
+整型：int、tinyint、smallint、bigint
+分本：char、varchar（可变字符）、text
+日期/时间：date、time、datetime
+定点数：decimal（p，s）
+浮点数：float（p，s） 存储空间： 4字节；double（p，s） 存储空间：8字节
+二、数据库的基本操作：
+1、创建/删除数据库：CREATE/DROP database database_name;
+三、数据表的基本操作：
+1、创建（CREATE）、查看（DESCRIBE）、修改（ALTER）、删除(DROP)
+创建：CREATE table table_name（field type null/not null）;
+查看：DESC table_name;
+修改：ALTER TABLE old_name RENAME TO new_name;
+删除：DROP table_name;
+2、创建表的约束添加：
+主键约束：PRIMARY KEY； 
+外键约束:FOREIGN KEY；
+检查约束：CHECK(条件)；
+默认约束：DEFAULT'默认值'；
+四、命名套路：
+主键命名：PK-XX-XX;外键命名：FK-XX-XX;
+五、数据字段的基本操作：
+修改字段名：ALTER TABLE TABLE_NAME CHANGE OLD_NAME NEW_NAME NEW_TYPE;
+修改字段数据类型：ALTER TABLE TABLE_NAME MODIFY COL_NAME NEW_TYPE;
+添加和删除字段：ADD NEW_COL_NAME NEW_TYPE  DROP COL_NAME;
+六、插入值用法：
+所有列插入值：INSERT [INTO] TABLE_NAME VALUES(XXX,XXX,XXX);
+特定列插入值：INSERT [INTO] TABLE_NAME VALUES(XXX,XXX);
+一次性插入多条数据：INSERT [INTO] TABLE_NAME[(COL1，COL2，...,COLn)] VALUES(XXX,XXX,XXX)(XXX,XXX,XXX)...(Xn1,Xn2,...Xnn)
+七、数据库常用模式：
+SELECT COL1，COL2，...,COLn                        挑选某组数列
+FROM TABLE1，TABLE2，...,TABLEn                    来自具体列表
+WHERE CONDITIONS                                   挑选条件
+GROUP BY LIST                                      查询结果分组
+HAVING CONDITIONS                                  筛选分组结果
+ORDER BY LIST[ASC\DESC]                            进行排序
